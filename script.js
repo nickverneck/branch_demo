@@ -3,7 +3,32 @@ var formEl = $('#skills-form');
 var nameInputEl = $('#skill-name');
 var dateInputEl = $('#datepicker');
 var skillsListEl = $('#skills-list');
-
+// Autocomplete widget
+$(function () {
+  var skillNames = [
+    'Bootstrap',
+    'C',
+    'C++',
+    'CSS',
+    'Express.js',
+    'Git',
+    'HTML',
+    'Java',
+    'JavaScript',
+    'jQuery',
+    'JSON',
+    'MySQL',
+    'Node.js',
+    'NoSQL',
+    'PHP',
+    'Python',
+    'React',
+    'Ruby',
+  ];
+  $('#skill-name').autocomplete({
+    source: skillNames,
+  });
+});
 var printSkills = function (name, date) {
   var listEl = $('<li>');
   var listDetail = name.concat(' on ', date);
